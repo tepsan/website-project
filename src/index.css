@@ -1,0 +1,21 @@
+.gradient_cat {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 920px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .gradient_cat {
+    width: 200px;
+    top: 70%;
+  }
+}

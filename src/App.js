@@ -2,38 +2,41 @@ import React from 'react';
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   theme,
+  extendTheme
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+
+import { Headers } from './components';
+import { Home, About, Team } from './pages';
+import Fonts from './Fonts';
+
+const extendedThemes = extendTheme({
+  ...theme,
+  fonts: {
+    heading: 'Gotham Book',
+    body: 'Gotham Book',
+  },
+  colors: {
+    ...theme.colors,
+    pinkBtn: '#fb6878',
+    yellowBtn: '#f8d859',
+  },
+});
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
+    <ChakraProvider theme={extendedThemes}>
+      <Fonts />
+      <Box
+        backgroundImage={`${process.env.PUBLIC_URL}/images/bg.png`}
+        backgroundPosition="top"
+        backgroundSize="cover"
+        minH="100vh"
+      >
+        <Headers />
+        <Home />
+        <About />
+        <Team />
       </Box>
     </ChakraProvider>
   );

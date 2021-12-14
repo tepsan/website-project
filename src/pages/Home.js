@@ -5,13 +5,15 @@ import Lottie from 'lottie-react';
 import GoldCat from '../assets/animation/gold_cat.json';
 import GradientCat from '../assets/animation/gradient_cat.json';
 
-export default function Home() {
+export default function Home({ data, account, loading, onMint}) {
   const [count, setCount] = useState(1);
+  const { totalSupply, maxSupply, cost, saleActive } = data;
   return (
     <Flex
       minH="100vh"
       position="relative"
       flexDirection="column"
+      justifyContent={{ base: 'center', md: 'flex-start' }}
       alignItems="center"
     >
       <Box className="gradient_cat">
@@ -27,12 +29,20 @@ export default function Home() {
       >
         Mint a Dood Cat
       </Heading>
-      <Text px={{base: '20px', md: 0}} mt={{base: '20px', md: 0}} textAlign="center" color="white" fontSize={{ base: 'lg', md: 'xl' }}>
-        10000/10000 DOOD CATS left at 0.069 ETH each
+      <Text
+        px={{ base: '20px', md: 0 }}
+        mt={{ base: '20px', md: 0 }}
+        textAlign="center"
+        color="white"
+        fontSize={{ base: 'lg', md: 'xl' }}
+      >
+        {`${totalSupply}/${maxSupply} DOOD CATS left at ${Number(
+          cost * count
+        ).toFixed(2)} ETH each`}
       </Text>
       <Input
-        onChange={() => setCount(count + 1)}
-        text="number"
+        onChange={e => setCount(e.target.value)}
+        type="number"
         name="count"
         bg="white"
         w="200px"
@@ -51,15 +61,22 @@ export default function Home() {
         as="button"
         bg="yellowBtn"
         borderRadius="20px"
-        w="200px"
+        minW="200px"
+        px="20px"
         h="60px"
         fontSize="2xl"
         fontWeight="bold"
         mt="20px"
         color="white"
         textTransform="uppercase"
+        disabled={!account || loading || !saleActive}
+        onClick={() => {
+          if (account && !loading && saleActive) {
+            onMint(count, cost);
+          }
+        }}
       >
-        Mint
+        {saleActive ? 'Mint' : 'Sale not active'}
       </Box>
     </Flex>
   );

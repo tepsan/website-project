@@ -5,6 +5,14 @@
   transform: translateY(-50%);
 }
 
+body {
+  background: #5c6da6;
+}
+
+.main {
+  object-fit: fill;
+}
+
 @media screen and (max-width: 920px) {
   .desktop-only {
     display: none !important;
@@ -15,7 +23,11 @@
   }
 
   .gradient_cat {
-    width: 200px;
-    top: 70%;
+    width: 100px;
+    top: 5%;
+  }
+
+  .gradient_cat.about {
+    top: 90%;
   }
 }

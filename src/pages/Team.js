@@ -5,14 +5,25 @@ import { TeamCard } from '../components';
 export default function Team() {
   return (
     <Flex
-      py="80px"
+      pt="30px"
+      pb="80px"
       px="30px"
+      flexDirection="column"
       justifyContent="center"
       alignItems="flex-start"
       flex="wrap"
       w="100%"
       minH="100vh"
     >
+      <Heading
+        fontSize={{ base: '4xl', lg: '6xl' }}
+        color="white"
+        textAlign="center"
+        w="100%"
+        mb="50px"
+      >
+        DOODCAT CREATORS
+      </Heading>
       <Grid
         templateColumns={{
           base: 'repeat(1, 1fr)',
@@ -22,34 +33,34 @@ export default function Team() {
         gap={6}
       >
         <TeamCard
-          heading="@BEUTREC"
-          text="Holding a Doodle allows you to participate in coordinating the Doodles
-          Community Treasury."
+          image="DOODCAT-01.png"
+          heading="TOFU"
+          text="Project Manager. Likes tofu."
         />
         <TeamCard
-          heading="@TEPSAN"
-          text="Holding a Doodle allows you to participate in coordinating the Doodles
-          Community Treasury."
+          image="DOODCAT-02.png"
+          heading="VUDA"
+          text="Developer. Loves Buddha"
         />
         <TeamCard
-          heading="@SOVANNPRANIDHK"
-          text="Holding a Doodle allows you to participate in coordinating the Doodles
-          Community Treasury."
+          image="DOODCAT-03.png"
+          heading="SPRINKLES"
+          text="Only eats donut with sprinkles."
         />
         <TeamCard
-          heading="@NAGGER"
-          text="Holding a Doodle allows you to participate in coordinating the Doodles
-        Community Treasury."
+          image="DOODCAT-04.png"
+          heading="POWDER"
+          text="Creative director. Likes makeup."
         />
         <TeamCard
-          heading="@TEPSAN"
-          text="Holding a Doodle allows you to participate in coordinating the Doodles
-        Community Treasury."
+          image="DOODCAT-05.png"
+          heading="BURPIE"
+          text="Developer. Burps constantly."
         />
         <TeamCard
-          heading="@SOVANNPRANIDHK"
-          text="Holding a Doodle allows you to participate in coordinating the Doodles
-        Community Treasury."
+          image="DOODCAT-06.png"
+          heading="BowWow"
+          text="Artist. Has a cat named Bowie"
         />
       </Grid>
     </Flex>

@@ -12,16 +12,20 @@ import {
   DrawerHeader,
   DrawerBody,
   Box,
+  Text,
 } from '@chakra-ui/react';
 
-export default function Headers() {
+export default function Headers({onConnect, account}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement] = useState('right');
+  const formatAddress = (str) => {
+    return str ? str.slice(0, 5) + '...' + str.slice(str.length - 5) : '';
+  }
   return (
     <Flex
       px={{ base: '10px', md: '15px', lg: '20px', xl: '50px' }}
       py="20px"
-      justifyContent="space-between"
+      justifyContent={{ base: 'center', lg: 'space-between' }}
       alignItems="center"
     >
       <Image
@@ -40,32 +44,38 @@ export default function Headers() {
         </Link>
       </Flex>
       <Flex alignItems="center">
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          color="white"
-          fontWeight="bold"
-          as="button"
-          w="200px"
-          bg="pinkBtn"
-          borderWidth="1px"
-          h="50px"
-          borderColor="white"
-          borderRadius="25px"
-          mr="10px"
-          className="desktop-only"
-        >
-          Connect Wallet
-        </Flex>
+        {!account ? (
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            color="white"
+            fontWeight="bold"
+            as="button"
+            w="200px"
+            bg="pinkBtn"
+            borderWidth="1px"
+            h="50px"
+            borderColor="white"
+            borderRadius="25px"
+            mr="10px"
+            className="desktop-only"
+            onClick={onConnect}
+          >
+            Connect Wallet
+          </Flex>
+        ) : (
+          <Text color="white">{formatAddress(account)}</Text>
+        )}
         <Box
           as="button"
-          bg="white"
           p="2"
           onClick={onOpen}
           display={{ base: 'block', md: 'none' }}
+          position="absolute"
+          right="10px"
           className="mobile-only"
         >
-          <HiMenu color="black" size="30" />
+          <HiMenu color="white" size="40" />
         </Box>
       </Flex>
       <Drawer
@@ -108,22 +118,28 @@ export default function Headers() {
             >
               Twitter
             </Link>
-            <Flex
-              justifyContent="center"
-              alignItems="center"
-              color="white"
-              fontWeight="bold"
-              as="button"
-              w="200px"
-              bg="pinkBtn"
-              borderWidth="1px"
-              h="50px"
-              borderColor="white"
-              borderRadius="25px"
-              mr="10px"
-            >
-              Connect Wallet
-            </Flex>
+            {!account ? (
+              <Flex
+                justifyContent="center"
+                alignItems="center"
+                color="white"
+                fontWeight="bold"
+                as="button"
+                w="200px"
+                bg="pinkBtn"
+                borderWidth="1px"
+                h="50px"
+                borderColor="white"
+                borderRadius="25px"
+                mr="10px"
+                className="desktop-only"
+                onClick={onConnect}
+              >
+                Connect Wallet
+              </Flex>
+            ) : (
+              <Text color="black">{formatAddress(account)}</Text>
+            )}
           </DrawerBody>
         </DrawerContent>
       </Drawer>

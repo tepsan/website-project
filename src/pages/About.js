@@ -21,6 +21,7 @@ export default function About() {
       flexDirection="column"
       justifyContent={{ base: 'flex-start', md: 'center' }}
       alignItems="center"
+      pt={{ base: '50px', lg: 0 }}
     >
       <Box id="nyan_cat" className="gradient_cat about"></Box>
       <Box

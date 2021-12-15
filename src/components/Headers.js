@@ -64,7 +64,9 @@ export default function Headers({onConnect, account}) {
             Connect Wallet
           </Flex>
         ) : (
-          <Text color="white">{formatAddress(account)}</Text>
+          <Text color="white" className="desktop-only">
+            {formatAddress(account)}
+          </Text>
         )}
         <Box
           as="button"

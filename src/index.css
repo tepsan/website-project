@@ -28,6 +28,7 @@ body {
   }
 
   .gradient_cat.about {
+    width: 70%;
     top: 90%;
   }
 }

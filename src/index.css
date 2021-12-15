@@ -24,11 +24,11 @@ body {
 
   .gradient_cat {
     width: 100px;
-    top: 5%;
+    top: -10px;
   }
 
   .gradient_cat.about {
     width: 70%;
-    top: 90%;
+    top: 100%;
   }
 }

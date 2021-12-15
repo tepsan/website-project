@@ -5,7 +5,7 @@ import { TeamCard } from '../components';
 export default function Team() {
   return (
     <Flex
-      pt={{ base: '50px', lg: '30px' }}
+      pt={{ base: '80px', lg: '30px' }}
       pb="80px"
       px="30px"
       flexDirection="column"

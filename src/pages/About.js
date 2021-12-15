@@ -1,9 +1,19 @@
+import React from 'react';
 import { Flex, Box, Heading, Text } from '@chakra-ui/react';
-import Lottie from 'lottie-react';
+import lottie from 'lottie-web';
 
-import NyanCat from '../assets/animation/nyan_cat.json';
+import Nyan from '../assets/animation/nyan_cat.json';
 
 export default function About() {
+     React.useEffect(() => {
+       lottie.loadAnimation({
+         container: document.querySelector('#nyan_cat'),
+         animationData: Nyan,
+         renderer: 'svg', // "canvas", "html"
+         loop: true, // boolean
+         autoplay: true, // boolean
+       });
+     }, []);
   return (
     <Flex
       position="relative"
@@ -12,12 +22,7 @@ export default function About() {
       justifyContent={{ base: 'flex-start', md: 'center' }}
       alignItems="center"
     >
-      <Box
-        className="gradient_cat about"
-        w={{ base: '300px', lg: '450px' }}
-      >
-        <Lottie animationData={NyanCat} />
-      </Box>
+      <Box id="nyan_cat" className="gradient_cat about"></Box>
       <Box
         maxW={{ base: '100%', md: '70%', lg: '50%' }}
         ml={{ base: '0', lg: 'auto' }}

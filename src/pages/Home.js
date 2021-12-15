@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex, Heading, Text, Input } from '@chakra-ui/react';
-import Lottie from 'lottie-react';
+import lottie from 'lottie-web';
 
 import GoldCat from '../assets/animation/gold_cat.json';
 import GradientCat from '../assets/animation/gradient_cat.json';
@@ -8,6 +8,22 @@ import GradientCat from '../assets/animation/gradient_cat.json';
 export default function Home({ data, account, loading, onMint}) {
   const [count, setCount] = useState(1);
   const { totalSupply, maxSupply, cost, saleActive } = data;
+   React.useEffect(() => {
+     lottie.loadAnimation({
+       container: document.querySelector('#golden_cat'),
+       animationData: GoldCat,
+       renderer: 'svg', // "canvas", "html"
+       loop: true, // boolean
+       autoplay: true, // boolean
+     });
+     lottie.loadAnimation({
+       container: document.querySelector('#gradient_cat'),
+       animationData: GradientCat,
+       renderer: 'svg', // "canvas", "html"
+       loop: true, // boolean
+       autoplay: true, // boolean
+     });
+   }, []);
   return (
     <Flex
       minH="100vh"
@@ -16,12 +32,8 @@ export default function Home({ data, account, loading, onMint}) {
       justifyContent={{ base: 'center', md: 'flex-start' }}
       alignItems="center"
     >
-      <Box className="gradient_cat">
-        <Lottie animationData={GradientCat} />
-      </Box>
-      <Box maxW={{ base: '200px', md: '350px', lg: '500px' }}>
-        <Lottie animationData={GoldCat} />
-      </Box>
+      <Box id="golden_cat"></Box>
+      <Box id="gradient_cat" className="gradient_cat"></Box>
       <Heading
         textTransform="uppercase"
         color="white"

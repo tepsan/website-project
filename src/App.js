@@ -96,8 +96,8 @@ function App() {
     <ChakraProvider theme={extendedThemes}>
       <Fonts />
       <Box
-        backgroundImage={`${process.env.PUBLIC_URL}/images/bg.png`}
-        backgroundPosition="top"
+        backgroundImage={`${process.env.PUBLIC_URL}/images/bg.svg`}
+        backgroundPosition="center"
         backgroundSize="cover"
         className="main"
         objectFit="cover"

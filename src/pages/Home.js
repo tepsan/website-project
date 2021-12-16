@@ -48,7 +48,7 @@ export default function Home({ data, account, loading, onMint}) {
         color="white"
         fontSize={{ base: 'lg', md: 'xl' }}
       >
-        {`${totalSupply}/${maxSupply} DOOD CATS left at ${Number(
+        {`${totalSupply}/${maxSupply} Dood Cats minted at ${Number(
           cost * count
         ).toFixed(2)} ETH each`}
       </Text>

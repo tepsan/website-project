@@ -36,10 +36,24 @@ export default function Headers({onConnect, account}) {
         <Link mr="50px" color="white" fontSize="2xl" textTransform="uppercase">
           Opensea
         </Link>
-        <Link mr="50px" color="white" fontSize="2xl" textTransform="uppercase">
+        <Link
+          mr="50px"
+          color="white"
+          fontSize="2xl"
+          textTransform="uppercase"
+          href="https://discord.gg/jh3RM6btQu"
+          isExternal
+        >
           Discord
         </Link>
-        <Link mr="50px" color="white" fontSize="2xl" textTransform="uppercase">
+        <Link
+          mr="50px"
+          color="white"
+          fontSize="2xl"
+          textTransform="uppercase"
+          href="https://twitter.com/DoodCatsNFT"
+          isExternal
+        >
           Twitter
         </Link>
       </Flex>
@@ -107,6 +121,8 @@ export default function Headers({onConnect, account}) {
               textTransform="uppercase"
               display="block"
               mb="20px"
+              href="https://discord.gg/jh3RM6btQu"
+              isExternal
             >
               Discord
             </Link>
@@ -117,6 +133,8 @@ export default function Headers({onConnect, account}) {
               textTransform="uppercase"
               display="block"
               mb="20px"
+              href="https://twitter.com/DoodCatsNFT"
+              isExternal
             >
               Twitter
             </Link>

@@ -5,6 +5,10 @@
   transform: translateY(-50%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #5c6da6;
 }

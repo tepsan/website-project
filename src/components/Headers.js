@@ -33,7 +33,14 @@ export default function Headers({onConnect, account}) {
         w={{ base: '150px', md: '200px', lg: '300px' }}
       />
       <Flex className="desktop-only">
-        <Link mr="50px" color="white" fontSize="2xl" textTransform="uppercase">
+        <Link
+          mr="50px"
+          color="white"
+          fontSize="2xl"
+          textTransform="uppercase"
+          href="https://opensea.io/collection/doodcats"
+          isExternal
+        >
           Opensea
         </Link>
         <Link
@@ -111,6 +118,8 @@ export default function Headers({onConnect, account}) {
               textTransform="uppercase"
               display="block"
               mb="20px"
+              href="https://opensea.io/collection/doodcats"
+              isExternal
             >
               Opensea
             </Link>

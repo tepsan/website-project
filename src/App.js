@@ -75,6 +75,7 @@ function App() {
     smartContract.methods
       .mint(count)
       .send({
+        gasLimit: '4712388',
         to: REACT_APP_CONTRACT_ADDRESS,
         from: account,
         value,

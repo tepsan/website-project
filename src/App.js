@@ -75,18 +75,16 @@ function App() {
     smartContract.methods
       .mint(count)
       .send({
-        gasLimit: '4712388',
+        gasLimit: '21000',
         to: REACT_APP_CONTRACT_ADDRESS,
         from: account,
         value,
       })
-      .once('error', (err) => {
+      .once('error', err => {
         toast.error('It seems the transaction was cancelled.');
       })
-      .then((receipt) => {
-        toast.success(
-          'Woohoo! Doodcat minted successfully!'
-        );
+      .then(receipt => {
+        toast.success('Woohoo! Doodcat minted successfully!');
         dispatch(fetchData(account));
       });
   };

@@ -88,7 +88,7 @@ export default function Home({ data, account, loading, onMint }) {
           }
         }}
       >
-        {saleActive ? 'Mint' : 'Sale not active'}
+        {saleActive ? 'Mint' : 'Sale/Presale not active'}
       </Box>
     </Flex>
   );

@@ -22,7 +22,7 @@ export default function Team() {
         w="100%"
         mb="50px"
       >
-        DOODCAT CREATORS
+        FACE OF THE PROJECT
       </Heading>
       <Flex
         flexWrap="wrap"
@@ -36,36 +36,17 @@ export default function Team() {
         // gap={6}
       >
         <TeamCard
-          image="DOODCAT-01.svg"
-          heading="TOFU"
-          text="Project Manager. Likes tofu."
-        />
-        <TeamCard
-          image="DOODCAT-02.svg"
-          heading="VUDA"
-          text="Developer. Loves Buddha"
-        />
-        <TeamCard
-          image="DOODCAT-03.svg"
-          heading="SPRINKLES"
-          text="Only eats donut with sprinkles."
-        />
-        <TeamCard
-          image="DOODCAT-04.svg"
-          heading="POWDER"
-          text="Creative director. Likes makeup."
-        />
-        <TeamCard
-          image="DOODCAT-05.svg"
-          heading="BURPIE"
-          text="Developer. Burps constantly."
-        />
-        <TeamCard
-          image="DOODCAT-06.svg"
-          heading="BowWow"
-          text="Artist. Has a cat named Bowie"
+          image="team.svg"
+          heading="ARCHIE"
+          text="PROJECT MANAGER
+"
         />
       </Flex>
+
+      <Text textAlign="center" maxW="800px"  color="white">
+        Text below can be: More information regarding the roadmap and the
+        history of Rainbow Cats can be found in the discord✨🌈
+      </Text>
     </Flex>
   );
 }

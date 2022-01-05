@@ -15,12 +15,12 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-export default function Headers({onConnect, account}) {
+export default function Headers({ onConnect, account }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement] = useState('right');
-  const formatAddress = (str) => {
+  const formatAddress = str => {
     return str ? str.slice(0, 5) + '...' + str.slice(str.length - 5) : '';
-  }
+  };
   return (
     <Flex
       px={{ base: '10px', md: '15px', lg: '20px', xl: '50px' }}
@@ -29,7 +29,7 @@ export default function Headers({onConnect, account}) {
       alignItems="center"
     >
       <Image
-        src={`${process.env.PUBLIC_URL}/images/logo.png`}
+        src={`${process.env.PUBLIC_URL}/Rainbowcats.svg`}
         w={{ base: '150px', md: '200px', lg: '300px' }}
       />
       <Flex className="desktop-only">
@@ -38,7 +38,7 @@ export default function Headers({onConnect, account}) {
           color="white"
           fontSize="2xl"
           textTransform="uppercase"
-          href="https://opensea.io/collection/doodcats"
+          href=""
           isExternal
         >
           Opensea
@@ -48,7 +48,7 @@ export default function Headers({onConnect, account}) {
           color="white"
           fontSize="2xl"
           textTransform="uppercase"
-          href="https://discord.gg/jh3RM6btQu"
+          href="https://discord.gg/8y4qyCkDkH"
           isExternal
         >
           Discord
@@ -58,7 +58,7 @@ export default function Headers({onConnect, account}) {
           color="white"
           fontSize="2xl"
           textTransform="uppercase"
-          href="https://twitter.com/DoodCatsNFT"
+          href="https://twitter.com/RainbowCatsNFT"
           isExternal
         >
           Twitter

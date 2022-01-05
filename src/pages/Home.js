@@ -5,25 +5,25 @@ import lottie from 'lottie-web';
 import GoldCat from '../assets/animation/gold_cat.json';
 import GradientCat from '../assets/animation/gradient_cat.json';
 
-export default function Home({ data, account, loading, onMint}) {
+export default function Home({ data, account, loading, onMint }) {
   const [count, setCount] = useState(1);
   const { totalSupply, maxSupply, cost, saleActive } = data;
-   React.useEffect(() => {
-     lottie.loadAnimation({
-       container: document.querySelector('#golden_cat'),
-       animationData: GoldCat,
-       renderer: 'svg', // "canvas", "html"
-       loop: true, // boolean
-       autoplay: true, // boolean
-     });
-     lottie.loadAnimation({
-       container: document.querySelector('#gradient_cat'),
-       animationData: GradientCat,
-       renderer: 'svg', // "canvas", "html"
-       loop: true, // boolean
-       autoplay: true, // boolean
-     });
-   }, []);
+  React.useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector('#golden_cat'),
+      animationData: GoldCat,
+      renderer: 'svg', // "canvas", "html"
+      loop: true, // boolean
+      autoplay: true, // boolean
+    });
+    lottie.loadAnimation({
+      container: document.querySelector('#gradient_cat'),
+      animationData: GradientCat,
+      renderer: 'svg', // "canvas", "html"
+      loop: true, // boolean
+      autoplay: true, // boolean
+    });
+  }, []);
   return (
     <Flex
       minH="100vh"
@@ -39,7 +39,7 @@ export default function Home({ data, account, loading, onMint}) {
         color="white"
         fontSize={{ base: '2xl', md: '5xl' }}
       >
-        Mint a Dood Cat
+        Mint a Rainbow Cat
       </Heading>
       <Text
         px={{ base: '20px', md: 0 }}
@@ -48,7 +48,7 @@ export default function Home({ data, account, loading, onMint}) {
         color="white"
         fontSize={{ base: 'lg', md: 'xl' }}
       >
-        {`${totalSupply}/${maxSupply} Dood Cats minted at ${Number(
+        {`${totalSupply}/${maxSupply} Rainbow Cats minted at ${Number(
           cost * count
         ).toFixed(2)} ETH each`}
       </Text>

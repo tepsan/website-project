@@ -5,15 +5,15 @@ import lottie from 'lottie-web';
 import Nyan from '../assets/animation/nyan_cat.json';
 
 export default function About() {
-     React.useEffect(() => {
-       lottie.loadAnimation({
-         container: document.querySelector('#nyan_cat'),
-         animationData: Nyan,
-         renderer: 'svg', // "canvas", "html"
-         loop: true, // boolean
-         autoplay: true, // boolean
-       });
-     }, []);
+  React.useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector('#nyan_cat'),
+      animationData: Nyan,
+      renderer: 'svg', // "canvas", "html"
+      loop: true, // boolean
+      autoplay: true, // boolean
+    });
+  }, []);
   return (
     <Flex
       position="relative"
@@ -35,18 +35,10 @@ export default function About() {
         </Heading>
         <Box>
           <Text color="white" mt="20px" fontSize="xl">
-            DoodCats is a collectibles NFT project inspired by the two blue-chip
-            projects CoolCats and Doodles. DoodCats are created from over 100+
-            hand drawn traits. Each DoodCat is unique and will never be the
-            same.
-          </Text>
-          <Text color="white" mt="20px" fontSize="xl">
-            The DoodCats public sale will be launched as a stealth drop and will
-            be announced primarily in our discord.
-          </Text>
-          <Text color="white" mt="20px" fontSize="xl">
-            Join the DoodCats community on Twitter or Discord to be the first to
-            hear about our launch!!
+            Rainbow cats are set to launch mid-January! First 1,000 cats will be
+            minted for free! (just pay gas). The remaining 2,000 will be
+            available to mint at 0.045E/Free per cat with the maximum of 8 mints
+            per wallet.
           </Text>
         </Box>
       </Box>

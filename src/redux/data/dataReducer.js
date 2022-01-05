@@ -2,7 +2,7 @@ const initialState = {
   loading: false,
   name: '',
   totalSupply: 0,
-  cost: 0.05,
+  cost: 0.045,
   saleActive: false,
   maxSupply: 3000,
   error: false,

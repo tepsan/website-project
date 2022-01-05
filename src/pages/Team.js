@@ -44,7 +44,7 @@ export default function Team() {
       </Flex>
 
       <Text textAlign="center" maxW="800px"  color="white">
-        Text below can be: More information regarding the roadmap and the
+        More information regarding the roadmap and the
         history of Rainbow Cats can be found in the discord✨🌈
       </Text>
     </Flex>

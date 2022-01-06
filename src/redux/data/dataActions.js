@@ -45,6 +45,10 @@ export const fetchData = account => {
         .getState()
         .blockchain.smartContract.methods.saleActive()
         .call();
+      let presaleActive = await store
+        .getState()
+        .blockchain.smartContract.methods.presaleActive()
+        .call();
       const priceInEth = store.getState().blockchain.web3.utils.fromWei(cost, 'ether');
 
       dispatch(
@@ -54,6 +58,7 @@ export const fetchData = account => {
           cost: priceInEth,
           maxSupply,
           saleActive,
+          presaleActive,
         })
       );
     } catch (err) {

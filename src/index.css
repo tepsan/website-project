@@ -17,6 +17,12 @@ body {
   object-fit: fill;
 }
 
+@media screen and (max-width: 1440px) {
+  .gradient_cat.about {
+    width: 30%;
+  }
+}
+
 @media screen and (max-width: 920px) {
   .desktop-only {
     display: none !important;

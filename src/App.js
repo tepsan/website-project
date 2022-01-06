@@ -88,6 +88,33 @@ function App() {
         dispatch(fetchData(account));
       });
   };
+  const claimPresaleNFTs = (count, cost) => {
+    if (count <= 0) {
+      return;
+    }
+
+    toast.info('Preparing your NFT...');
+    const value = blockchain.web3.utils.toWei(
+      (cost * count).toString(),
+      'ether'
+    );
+
+    smartContract.methods
+      .mintPresale(count)
+      .send({
+        gasLimit: '285000',
+        to: REACT_APP_CONTRACT_ADDRESS,
+        from: account,
+        value,
+      })
+      .once('error', err => {
+        toast.error('It seems the transaction was cancelled.');
+      })
+      .then(receipt => {
+        toast.success('Woohoo! Doodcat minted successfully!');
+        dispatch(fetchData(account));
+      });
+  };
 
 
   return (
@@ -106,6 +133,7 @@ function App() {
           account={account}
           loading={loading}
           onMint={claimNFTs}
+          onMintPresale={claimPresaleNFTs}
         />
         <About />
         <Team />

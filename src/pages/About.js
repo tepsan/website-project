@@ -5,15 +5,15 @@ import lottie from 'lottie-web';
 import Nyan from '../assets/animation/nyan_cat.json';
 
 export default function About() {
-  React.useEffect(() => {
-    lottie.loadAnimation({
-      container: document.querySelector('#nyan_cat'),
-      animationData: Nyan,
-      renderer: 'svg', // "canvas", "html"
-      loop: true, // boolean
-      autoplay: true, // boolean
-    });
-  }, []);
+     React.useEffect(() => {
+       lottie.loadAnimation({
+         container: document.querySelector('#nyan_cat'),
+         animationData: Nyan,
+         renderer: 'svg', // "canvas", "html"
+         loop: true, // boolean
+         autoplay: true, // boolean
+       });
+     }, []);
   return (
     <Flex
       position="relative"
@@ -31,14 +31,11 @@ export default function About() {
         px={{ base: '20px', lg: 0 }}
       >
         <Heading color="white" fontSize={{ base: '2xl', md: '4xl' }}>
-          A COLLECTION OF 3,000 DOODCATS
+        A COLLECTION OF 5,000 RAINBOW CATSS
         </Heading>
         <Box>
           <Text color="white" mt="20px" fontSize="xl">
-            Rainbow cats are set to launch mid-January! First 1,000 cats will be
-            minted for free! (just pay gas). The remaining 2,000 will be
-            available to mint at 0.045E/Free per cat with the maximum of 8 mints
-            per wallet.
+          Rainbow cats are set to launch in the first weekend of 2022! First 1,000 cats will be minted for free! (just pay gas). The remaining 4,000 will be available to mint at 0.038E per cat with the maximum of 5 mints per wallet.
           </Text>
         </Box>
       </Box>

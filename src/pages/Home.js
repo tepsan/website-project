@@ -5,9 +5,9 @@ import lottie from 'lottie-web';
 import GoldCat from '../assets/animation/gold_cat.json';
 import GradientCat from '../assets/animation/gradient_cat.json';
 
-export default function Home({ data, account, loading, onMint }) {
+export default function Home({ data, account, loading, onMint, onMintPresale }) {
   const [count, setCount] = useState(1);
-  const { totalSupply, maxSupply, cost, saleActive } = data;
+  const { totalSupply, maxSupply, cost, saleActive, presaleActive } = data;
   React.useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector('#golden_cat'),
@@ -83,12 +83,15 @@ export default function Home({ data, account, loading, onMint }) {
         textTransform="uppercase"
         disabled={!account || loading || !saleActive}
         onClick={() => {
-          if (account && !loading && saleActive) {
+          if (account && !loading && saleActive && !presaleActive) {
             onMint(count, cost);
+          }
+          if (account && !loading && presaleActive && !saleActive) {
+            onMintPresale(count, cost);
           }
         }}
       >
-        {saleActive ? 'Mint' : 'Sale/Presale not active'}
+        {saleActive || presaleActive ? 'Mint' : 'Sale/Presale not active'}
       </Box>
     </Flex>
   );

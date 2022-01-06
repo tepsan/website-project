@@ -2,10 +2,10 @@ const initialState = {
   loading: false,
   name: '',
   totalSupply: 0,
-  cost: 0.045,
+  cost: 0.038,
   saleActive: false,
   presaleActive: false,
-  maxSupply: 3000,
+  maxSupply: 5000,
   error: false,
   errorMsg: '',
 };

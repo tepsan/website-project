@@ -31,7 +31,7 @@ export default function About() {
         px={{ base: '20px', lg: 0 }}
       >
         <Heading color="white" fontSize={{ base: '2xl', md: '4xl' }}>
-        A COLLECTION OF 5,000 RAINBOW CATSS
+        A COLLECTION OF 5,000 RAINBOW CATS
         </Heading>
         <Box>
           <Text color="white" mt="20px" fontSize="xl">

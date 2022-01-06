@@ -84,7 +84,7 @@ function App() {
         toast.error('It seems the transaction was cancelled.');
       })
       .then(receipt => {
-        toast.success('Woohoo! Doodcat minted successfully!');
+        toast.success('Woohoo! Rainbow Cats minted successfully!');
         dispatch(fetchData(account));
       });
   };
@@ -111,7 +111,7 @@ function App() {
         toast.error('It seems the transaction was cancelled.');
       })
       .then(receipt => {
-        toast.success('Woohoo! Doodcat minted successfully!');
+        toast.success('Woohoo! Rainbow Cats minted successfully!');
         dispatch(fetchData(account));
       });
   };

@@ -118,7 +118,7 @@ export default function Headers({onConnect, account}) {
               textTransform="uppercase"
               display="block"
               mb="20px"
-              href="https://opensea.io/collection/doodcats"
+              href="https://opensea.io/collection/rainbowcatsofficial/"
               isExternal
             >
               Opensea
@@ -130,7 +130,7 @@ export default function Headers({onConnect, account}) {
               textTransform="uppercase"
               display="block"
               mb="20px"
-              href="https://discord.gg/jh3RM6btQu"
+              href="https://discord.gg/RainbowCatsNFT"
               isExternal
             >
               Discord
@@ -142,7 +142,7 @@ export default function Headers({onConnect, account}) {
               textTransform="uppercase"
               display="block"
               mb="20px"
-              href="https://twitter.com/DoodCatsNFT"
+              href="https://twitter.com/RainbowCatsNFT"
               isExternal
             >
               Twitter

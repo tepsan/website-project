@@ -80,8 +80,9 @@ export default function Home({ data, account, loading, onMint, onMintPresale }) 
         mt="20px"
         color="white"
         textTransform="uppercase"
-        disabled={!account || loading || !saleActive}
+        disabled={!account || loading || (!saleActive && !presaleActive)}
         onClick={() => {
+          console.log(account, !loading, saleActive, presaleActive);
           if (account && !loading && saleActive) {
             onMint(count, cost);
           }

@@ -88,11 +88,16 @@ function App() {
         dispatch(fetchData(account));
       });
   };
-  const claimPresaleNFTs = (count, cost) => {
+  const claimPresaleNFTs = async (count, cost) => {
     if (count <= 0) {
       return;
     }
 
+    const isWhitelisted = await smartContract.methods.isWhitelisted(blockchain.account).call();
+    if (!isWhitelisted) {
+      toast.error('Not a whitelisted users');
+      return;
+    }
     toast.info('Preparing your NFT...');
     const value = blockchain.web3.utils.toWei(
       (cost * count).toString(),

@@ -48,9 +48,7 @@ export default function Home({ data, account, loading, onMint, onMintPresale }) 
         color="white"
         fontSize={{ base: 'lg', md: 'xl' }}
       >
-        {`${totalSupply}/${maxSupply} Rainbow Cats minted at ${Number(
-          cost * count
-        ).toFixed(3)} ETH each`}
+        {`${totalSupply}/${maxSupply} Rainbow Cats minted at 0.038 ETH each`}
       </Text>
       <Input
         onChange={e => setCount(e.target.value)}

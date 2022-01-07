@@ -43,11 +43,11 @@ export const fetchData = account => {
         .call();
       let saleActive = await store
         .getState()
-        .blockchain.smartContract.methods.saleActive()
+        .blockchain.smartContract.methods.isPublicSaleActive()
         .call();
       let presaleActive = await store
         .getState()
-        .blockchain.smartContract.methods.presaleActive()
+        .blockchain.smartContract.methods.isWhitelistSaleActive()
         .call();
       const priceInEth = store.getState().blockchain.web3.utils.fromWei(cost, 'ether');
 

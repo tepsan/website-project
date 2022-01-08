@@ -118,7 +118,7 @@ export default function Headers({onConnect, account}) {
               textTransform="uppercase"
               display="block"
               mb="20px"
-              href="https://opensea.io/collection/rainbowcatsofficial/"
+              href="https://opensea.io/collection/rainbowcatsnft"
               isExternal
             >
               Opensea
